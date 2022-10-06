@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CarsShop.Models.UserViewModel>
+ 
+@{
+    ViewBag.Title = "Index";
+}
+ 
+<h2>Index</h2>
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserRole)
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => user.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => user.UserAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => user.UserRole)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete",new{id=user.UserID})
+            </td>
+        </tr>
+    }
+    @await Html.PartialAsync("CreateUser", (UserViewModel)null)
+</table>
+
+
+@*@model UsersViewModel
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="col-md-12">
+        <h2>Users List</h2>
+        <ul>
+            @foreach (var user in Model.Users)
+            {
+                <li>@user.UserID - @user.UserRole - @user.UserName - @user.UserAge</li>
+            }
+        </ul>
+    </div>
+    @await Html.PartialAsync("_SubmitUser", (CreateUserViewModel)null)
+</div>*@

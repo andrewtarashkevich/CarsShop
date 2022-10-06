@@ -1,0 +1,54 @@
+﻿@model CarsShop.Models.CarViewModel?
+@{
+    ViewBag.Title = "CreateCar";
+}
+
+<h2>CreateCar</h2>
+
+<div class="col-md-12">
+    @using (Html.BeginForm("CreateCar", "Cars", FormMethod.Post))
+    {
+        <div class="col-md-12">
+            UserID:
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.UserID)
+        </div>
+
+        <div class="col-md-12">
+            CarModel:
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.CarModel)
+        </div>
+
+        <div class="col-md-12">
+            Desc:
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.Desc)
+        </div>
+
+        <div class="col-md-12">
+            Img:
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.Img)
+        </div>
+
+        <div class="col-md-12">
+            Price:
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.Price)
+        </div>
+
+        <div class="col-md-12">
+            <input type="submit" value="Submit" />
+        </div>
+    }
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

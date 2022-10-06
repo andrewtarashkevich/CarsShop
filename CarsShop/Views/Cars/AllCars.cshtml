@@ -1,0 +1,9 @@
+﻿@model CarViewModel
+
+<div class="col-lg-4">
+    <img class="img-thumbnail" src="@Model.Img" alt="@Model.CarModel" />
+    <h2>@Model.CarModel</h2>
+    <p>@Model.Desc</p>
+    <p>Цена: @Model.Price.ToString("c")</p>
+    @Html.ActionLink("Delete", "Delete",new{id=Model.CarID})
+</div>

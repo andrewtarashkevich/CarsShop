@@ -1,0 +1,19 @@
+﻿@model CarsShop.Models.CarViewModel?
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>DeleteCar</h2>
+
+<div class="col-md-12">
+    @using (Html.BeginForm("Delete", "Cars"))
+    {
+        <div class="col-md-12">
+            <input type="submit" value="Car deleted" />
+        </div>
+    }
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

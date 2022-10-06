@@ -1,0 +1,42 @@
+﻿@model CarsShop.Models.UserViewModel?
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+<h2>CreateUser</h2>
+
+<div class="col-md-12">
+    @using (Html.BeginForm("CreateUser", "Users", FormMethod.Post))
+    {
+
+        <div class="col-md-12">
+            Role:
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.UserRole)
+        </div>
+
+        <div class="col-md-12">
+            Name:
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.UserName)
+        </div>
+
+        <div class="col-md-12">
+            Age:
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.UserBirthday)
+        </div>
+
+
+        <div class="col-md-12">
+            <input type="submit" value="Submit" />
+        </div>
+    }
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CarsShop.Models.CarViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@{
+    ViewBag.Title = "Cars";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row mt-5 mb-2">
+        <h2>Cars List</h2>
+        @{
+            @foreach (var car in Model)
+            {
+                @Html.Partial("AllCars",car)
+            }
+        }
+    </div>
+    @await Html.PartialAsync("CreateCar", (CarViewModel)null)
+</div>
