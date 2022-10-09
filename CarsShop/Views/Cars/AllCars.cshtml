@@ -4,6 +4,7 @@
     <img class="img-thumbnail" src="@Model.Img" alt="@Model.CarModel" />
     <h2>@Model.CarModel</h2>
     <p>@Model.Desc</p>
-    <p>Цена: @Model.Price.ToString("c")</p>
+    <p>Владелец: @Model.UserID</p>    
+    <p>Цена: @Model.Price.ToString()$</p>
     @Html.ActionLink("Delete", "Delete",new{id=Model.CarID})
 </div>

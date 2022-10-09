@@ -14,7 +14,8 @@ namespace CarsShop.DAL.EntityTypeConfigurations
         public void Configure(EntityTypeBuilder<Car> builder)
         {
             builder.HasKey(car => car.CarID);
-            builder.HasOne<User>().WithMany().HasForeignKey(car => car.UserID);
+            //builder.HasOne<User>().WithMany().HasForeignKey(car => car.UserID);
+            builder.HasOne(c => c.User).WithMany(c => c.Cars).HasForeignKey(car => car.UserID);
         }
     }
 }

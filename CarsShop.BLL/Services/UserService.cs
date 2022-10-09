@@ -22,14 +22,8 @@ namespace CarsShop.BLL.Services
         }
 
         public void Delete(int? id)
-        {
-            if (id == null)
-                throw new ValidationException("Не установлено id", "");
-
-            var user = UserDatabase.Get(id.Value);
-            if (user == null)
-                throw new ValidationException("User не найден", "");
-
+        {            
+            var user = UserDatabase.Get(id.Value);            
             UserDatabase.Delete(user.UserID);
         }
 
@@ -41,10 +35,7 @@ namespace CarsShop.BLL.Services
         }
 
         public UserDTO GetUser(int? id)
-        {
-            if (id == null)
-                throw new ValidationException("Не установлено id", "");
-
+        {            
             var user = UserDatabase.Get(id.Value);
             if (user == null)
                 throw new ValidationException("User не найден", "");
@@ -53,11 +44,7 @@ namespace CarsShop.BLL.Services
         }
 
         public void CreateUser(UserDTO userDto)
-        {
-            // валидация
-            if (UserDatabase.Get(userDto.UserID) != null)
-                throw new ValidationException("Валидация не пройдена", "");
-
+        {            
             User user = new User
             {
                 UserName = userDto.UserName,
@@ -70,16 +57,6 @@ namespace CarsShop.BLL.Services
             UserDatabase.Create(user);
             UserDatabase.Save();
         }
-
-        //public ClaimsIdentity Authenticate(UserDTO userDto)
-        //{
-        //    ClaimsIdentity claim = null;
-        //    // находим пользователя
-        //    User user = UserDatabase.Get(userDto.UserID);
-        //    // авторизуем его и возвращаем объект ClaimsIdentity
-        //    if (user != null)
-        //        claim = UserDatabase.UserManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
-        //    return claim;
-        //}
+                
     }
 }

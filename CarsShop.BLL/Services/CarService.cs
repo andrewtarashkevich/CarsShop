@@ -19,13 +19,8 @@ namespace CarsShop.BLL.Services
         }
 
         public void Delete(int? id)
-        {
-            if (id == null)
-                throw new ValidationException("Не установлено id", "");
-
-            var car = CarDatabase.Get(id.Value);
-            if (car == null)
-                throw new ValidationException("Car не найден", "");
+        {            
+            var car = CarDatabase.Get(id.Value);           
             CarDatabase.Delete(car.CarID);
         }
 
@@ -37,10 +32,7 @@ namespace CarsShop.BLL.Services
         }
 
         public CarDTO GetCar(int? id)
-        {
-            if (id == null)
-                throw new ValidationException("Не установлено id", "");
-
+        {            
             var car = CarDatabase.Get(id.Value);
             if (car == null)
                 throw new ValidationException("Car не найден", "");
@@ -49,11 +41,7 @@ namespace CarsShop.BLL.Services
         }
 
         public void CreateCar(CarDTO carDto)
-        {
-            // валидация
-            if (CarDatabase.Get(carDto.CarID) != null)
-                throw new ValidationException("Валидация не пройдена", "");
-
+        {            
             Car car = new Car
             {
                 CarID = carDto.CarID,
@@ -61,12 +49,12 @@ namespace CarsShop.BLL.Services
                 Desc = carDto.Desc,
                 Img = carDto.Img,
                 Price = carDto.Price,
-                //UserID = carDto.UserID
+                UserID = carDto.UserID
             };
 
             CarDatabase.Create(car);
-
             CarDatabase.Save();
         }
+        
     }
 }

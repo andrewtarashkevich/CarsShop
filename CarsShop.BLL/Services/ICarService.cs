@@ -18,6 +18,7 @@ namespace CarsShop.BLL.Services
 
         //получает все cars и с помощью автомаппера преобразует их в CarDTO и передает на уровень представления.
         IEnumerable<CarDTO> GetCars();
+        
         void Delete(int? id);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using CarsShop.BLL.DTO;
 
 namespace CarsShop.Models
 {
@@ -10,6 +11,5 @@ namespace CarsShop.Models
         public string Img { get; set; }
         public int Price { get; set; }
         public int UserID { get; set; }
-        public UserViewModel User { get; set; }
     }
 }

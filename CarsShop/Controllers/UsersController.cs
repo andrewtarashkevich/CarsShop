@@ -25,7 +25,7 @@ namespace CarsShop.Controllers
             //usersViewModel.Users = StaticUsers;
             //return View(usersViewModel);            
         }       
-        public ActionResult GetUser(int? id)
+        public IActionResult GetUser(int? id)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace CarsShop.Controllers
         {
             try
             {
-                var userDto = new UserDTO { UserName = user.UserName, UserID = user.UserID, UserBirthday = user.UserBirthday, UserPassword = user.UserRole, UserRole = user.UserRole };
+                var userDto = new UserDTO { UserName = user.UserName, UserID = user.UserID, UserBirthday = user.UserBirthday, UserPassword = user.Password, UserRole = user.UserRole};
                 userService.CreateUser(userDto);
                 return Content("<h2>User added</h2>");
             }
@@ -66,50 +66,6 @@ namespace CarsShop.Controllers
                 return Content(ex.Message);
             }
         }
-
-        //Старые методы для одного слоя
-        //public static List<UserViewModel> StaticUsers { get; } = new List<UserViewModel>
-        //{
-        //    new()
-        //    {
-        //       ID = 0,
-        //       UserRole = "Admin",
-        //       UserName = "Admin",
-        //       UserBirthday = new DateTime(1996, 6, 2)
-        //    },
-        //    new()
-        //    {
-        //       ID = 1,
-        //       UserRole = "User",
-        //       UserName = "User1",
-        //       UserBirthday = new DateTime(1991, 8, 11)
-        //    },
-        //    new()
-        //    {
-        //       ID = 2,
-        //       UserRole = "User",
-        //       UserName = "USer2",
-        //       UserBirthday = new DateTime(1992, 2, 22)
-        //    },
-        //    new()
-        //    {
-        //       ID = 3,
-        //       UserRole = "User",
-        //       UserName = "User3",
-        //       UserBirthday = new DateTime(1994, 5, 12)
-        //    },
-        //};
-        //public IActionResult CreateUser(CreateUserViewModel createUserViewModel)
-        //{
-        //    StaticUsers.Add(new UserViewModel
-        //    {
-        //        ID = StaticUsers.Count,
-        //        UserRole = createUserViewModel.UserRole,
-        //        UserName = createUserViewModel.UserName,
-        //        UserBirthday = createUserViewModel.UserBirthday
-
-        //    });
-        //    return RedirectToAction("Index");
-        //}
+        
     }
 }

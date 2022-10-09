@@ -34,7 +34,7 @@ namespace CarsShop.DAL.Repositories
         public Car Get(int id)
         {
             return db.Cars.Find(id);
-        }
+        }        
 
         public IEnumerable<Car> GetAll()
         {
@@ -48,6 +48,6 @@ namespace CarsShop.DAL.Repositories
         public void Save()
         {
             db.SaveChanges();
-        }
+        }        
     }
 }

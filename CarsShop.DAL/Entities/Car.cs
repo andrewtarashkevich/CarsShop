@@ -13,7 +13,10 @@ namespace CarsShop.DAL.Entities
         public string CarModel { get; set; }
         public string Desc { get; set; }
         public string Img { get; set; }
-        public int Price { get; set; }       
+        public int Price { get; set; }
+
+        [Key]
         public int UserID { get; set; }
+        public User User { get; set; }
     }
 }
