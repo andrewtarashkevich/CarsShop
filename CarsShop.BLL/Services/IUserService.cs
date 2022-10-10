@@ -7,6 +7,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CarsShop.BLL.Services
 {
     public interface IUserService
@@ -19,6 +20,6 @@ namespace CarsShop.BLL.Services
         IEnumerable<UserDTO> GetUsers();
         //получает все users и с помощью автомаппера преобразует их в UserDTO и передает на уровень представления.
         void Delete(int? id);
-        //ClaimsIdentity Authenticate(UserDTO userDto);
+        //ClaimsIdentity Authenticate(UserDTO userDto);        
     }
 }

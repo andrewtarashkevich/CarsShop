@@ -35,6 +35,10 @@ namespace CarsShop.DAL.Repositories
         {
             return db.Users.Find(id);
         }
+        public User Get(User user)
+        {
+            return db.Users.Find(user.UserID);
+        }
 
         public IEnumerable<User> GetAll()
         {

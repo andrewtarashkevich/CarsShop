@@ -57,6 +57,18 @@ namespace CarsShop.BLL.Services
             UserDatabase.Create(user);
             UserDatabase.Save();
         }
-                
+
+        //public ClaimsIdentity Authenticate(UserDTO userDto)
+        //{
+        //    ClaimsIdentity claim = null;
+        //    // находим пользователя
+        //    User user = UserDatabase.Get(userDto.UserID);
+        //    // авторизуем его и возвращаем объект ClaimsIdentity
+        //    if (user != null)
+        //        claim = UserManagerExtensions.CreateIdentity<User, DefaultAuthenticationTypes>(
+        //            this UserManager <User, DefaultAuthenticationTypes> manager, 
+        //            User user, string DefaultAuthenticationTypes.ApplicationCookie);
+        //    return claim;
+        //}
     }
 }
